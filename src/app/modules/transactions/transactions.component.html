@@ -1,1 +1,24 @@
-<p>transactions works!</p>
+
+
+<mat-card *ngFor="let transaction of transactions">
+  <mat-card-header>
+    <label for="">{{ transaction.merchantId }}</label>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="list-item-content">
+      <div class="transaction-icon">
+
+        <mat-icon>paid</mat-icon>
+      </div>
+      <div class="transaction-detail">
+        <label for="">Date: {{ transaction.date | date:'fullDate' }}</label>
+        <label for="">Amount: {{ transaction.amount | currency }}</label>
+        <label for="">Made by: {{ transaction.userId }}</label>
+        <label for="">Account Number: ...{{ transaction.accountId }}</label>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+

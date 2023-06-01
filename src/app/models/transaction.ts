@@ -1,3 +1,5 @@
+import { EMerchantType } from "./merchant";
+
 export interface ITransaction {
   id: number;
   merchantId: number;
@@ -6,6 +8,10 @@ export interface ITransaction {
   transactionType: ETransactionType;
   date: string;
   accountId: number;
+  userName?: string;
+  accountNumber?: string;
+  merchantName?: string;
+  merchantType?: `${EMerchantType}`;
 }
 
 export enum ETransactionType {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TransactionsComponent } from './transactions.component';
 import { Route, RouterModule } from '@angular/router';
+import { MaterialModule } from '@shared/material.module';
 
 const routes: Route[] = [
   {
@@ -16,7 +17,8 @@ const routes: Route[] = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MaterialModule
   ]
 })
 export class TransactionsModule { }
