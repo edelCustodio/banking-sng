@@ -14,9 +14,7 @@ export class MainComponent {
   @ViewChild(MatSidenav, { static: false })
   sidenav!: MatSidenav;
 
-  responsive$: Observable<BreakpointState> = this.observer
-  .observe(['(max-width: 800px)'])
-  .pipe(delay(1));
+  responsive$: Observable<BreakpointState> = this.observer.observe(['(max-width: 800px)']).pipe(delay(1));
 
   constructor(
     private observer: BreakpointObserver,

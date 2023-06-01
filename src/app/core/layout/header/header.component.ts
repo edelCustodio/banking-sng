@@ -16,5 +16,4 @@ export class HeaderComponent  {
     private sideNavService: SideNavService
   ) {}
 
-
 }

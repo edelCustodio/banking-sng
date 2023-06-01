@@ -7,14 +7,4 @@ import { SideNavService } from '../services/side-nav.service';
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss']
 })
-export class SideNavComponent  {
-
-
-
-  constructor(
-
-  ) {}
-
-
-
-}
+export class SideNavComponent  { }
