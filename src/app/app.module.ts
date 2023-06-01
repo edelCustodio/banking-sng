@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppData } from '@db/app-data';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from '@core/core.module';
+
 
 @NgModule({
   declarations: [
@@ -16,10 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CoreModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(AppData, { delay: 1000 }),
+    HttpClientInMemoryWebApiModule.forRoot(AppData, { delay: 1000 })
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }
