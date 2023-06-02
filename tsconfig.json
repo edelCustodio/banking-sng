@@ -28,7 +28,8 @@
       "@shared/*": ["src/app/shared/*"],
       "@db/*": ["src/app/db/*"],
       "@modules/*": ["src/app/modules/*"],
-      "@core/*": ["src/app/core/*"]
+      "@core/*": ["src/app/core/*"],
+      "@resolvers/*": ["src/app/resolvers/*"]
     }
   },
   "angularCompilerOptions": {

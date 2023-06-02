@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TransactionsService } from '../services/transactions.service';
 import { ITransaction } from '@models/transaction';
 import { Subject, takeUntil } from 'rxjs';
+import { UsersService } from '@modules/services/users.service';
 
 @Component({
   selector: 'app-transactions',
@@ -14,7 +15,8 @@ export class TransactionsComponent implements OnInit, OnDestroy {
   unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
-    private transactionsService: TransactionsService
+    private transactionsService: TransactionsService,
+    private usersService: UsersService
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +27,8 @@ export class TransactionsComponent implements OnInit, OnDestroy {
     .subscribe(
       (transactions: ITransaction[]) => this.transactions = transactions
     );
+
+    this.usersService.userLoggedIn$.subscribe((data: any) => console.log(data))
   }
 
   ngOnDestroy(): void {
