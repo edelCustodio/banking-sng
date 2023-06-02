@@ -15,7 +15,7 @@ export class AppData implements InMemoryDbService {
     accounts: IAccount[],
     userAccounts: IUserAccount[],
     merchants: IMerchant[],
-    merchantType: IMerchantType[],
+    merchantsType: IMerchantType[],
     transactions: ITransaction[]
   } {
     return {
@@ -23,7 +23,7 @@ export class AppData implements InMemoryDbService {
       accounts: AccountData.accounts,
       userAccounts: UserData.userAccounts,
       merchants: MerchantData.merchants,
-      merchantType: MerchantType.merchantsType,
+      merchantsType: MerchantType.merchantsType,
       transactions: TransactionData.transactions
     }
   }

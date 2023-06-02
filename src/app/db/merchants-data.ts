@@ -14,7 +14,7 @@ export class MerchantData {
     },
     {
       "id": 3,
-      "name": "MOBILE PYMT",
+      "name": "Mobile Payment",
       "merchantTypeId": 2
     },
     {

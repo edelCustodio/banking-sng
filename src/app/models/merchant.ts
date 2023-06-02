@@ -2,6 +2,7 @@ export interface IMerchant {
   id: number;
   name: string;
   merchantTypeId: number;
+  merchantName?: string;
 }
 
 export interface IMerchantType {
