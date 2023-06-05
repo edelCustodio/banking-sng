@@ -17,6 +17,16 @@ const routes: Routes = [
         loadChildren: () =>
           import('./modules/transactions/transactions.module').then(m => m.TransactionsModule)
       },
+      {
+        path: 'transfers',
+        loadChildren: () =>
+          import('./modules/transfers/transfers.module').then(m => m.TransfersModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () =>
+          import('./modules/user/user.module').then(m => m.UserModule)
+      },
       { path: '', redirectTo: 'transactions', pathMatch: 'full' },
     ]
   }
