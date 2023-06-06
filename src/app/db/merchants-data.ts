@@ -126,6 +126,16 @@ export class MerchantData {
       "id": 25,
       "name": "Airline",
       "merchantTypeId": 10
+    },
+    {
+      "id": 26,
+      "name": "...4567 (Test 1)",
+      "merchantTypeId": 11
+    },
+    {
+      "id": 27,
+      "name": "...9754 (Test 2)",
+      "merchantTypeId": 11
     }
   ]
 }

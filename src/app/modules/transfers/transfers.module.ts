@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { TransfersComponent } from './transfers.component';
 import { Route, RouterModule } from '@angular/router';
 import { MaterialModule } from '@shared/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '@shared/shared.module';
 
 const routes: Route[] = [
   {
@@ -18,7 +20,10 @@ const routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class TransfersModule { }

@@ -41,6 +41,10 @@ export class MerchantType {
     {
       "id": 10,
       "name": "Airfare"
-    }
+    },
+    {
+      "id": 11,
+      "name": "Transfer"
+    },
    ]
 }

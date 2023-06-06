@@ -38,15 +38,18 @@ export class TransactionsComponent implements OnInit, OnDestroy {
       takeUntil(this.unsubscribe$)
     )
     .subscribe(
-      ([transactions, merchants, account, userloggedIn]) => this.transactions = transactions.map(
-        (transaction: ITransaction) => ({
-          ...transaction,
-          userName: userloggedIn.user.firstName,
-          merchantName: merchants.find(m => m.id === transaction.merchantId)?.name,
-          merchantType: merchants.find(m => m.id === transaction.merchantId)?.merchantName,
-          accountNumber: account.accountNumber
-        } as ITransaction)
-      )
+      ([transactions, merchants, account, userloggedIn]) => {
+        this.transactions = transactions.map(
+          (transaction: ITransaction) => ({
+            ...transaction,
+            userName: userloggedIn.user.firstName,
+            merchantName: merchants.find(m => m.id === transaction.merchantId)?.name,
+            merchantType: merchants.find(m => m.id === transaction.merchantId)?.merchantName,
+            accountNumber: account.accountNumber
+          } as ITransaction)
+        ).sort((a, b) => (Date.parse((new Date(b.date).toString())) - Date.parse((new Date(a.date)).toString())));
+        console.log(this.transactions);
+      }
     );
   }
 

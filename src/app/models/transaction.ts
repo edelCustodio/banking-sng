@@ -1,7 +1,7 @@
 import { EMerchantType } from "./merchant";
 
 export interface ITransaction {
-  id: number;
+  id?: number;
   merchantId: number;
   amount: number;
   userId: number;
@@ -18,5 +18,13 @@ export enum ETransactionType {
   SPENT,
   REFUND,
   CASH_BACK,
-  PAYMENT
+  PAYMENT,
+  TRANSFER
+}
+
+export interface ITranfer {
+  from: number;
+  to: number;
+  date: string;
+  amount: number;
 }

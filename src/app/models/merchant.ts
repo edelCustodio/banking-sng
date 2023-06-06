@@ -20,5 +20,6 @@ export enum EMerchantType {
   INTERNET = 'Internet',
   AIRFARE = 'Airfare',
   INSURANCE = 'Insurance',
-  HEALTH_CARE = 'Health Care'
+  HEALTH_CARE = 'Health Care',
+  TRANSFER = 'Transfer'
 }
