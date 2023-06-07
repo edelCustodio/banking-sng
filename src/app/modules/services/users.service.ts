@@ -8,18 +8,15 @@ import { Observable, combineLatest, map, mergeMap, shareReplay, tap } from 'rxjs
 })
 export class UsersService {
 
-  private usersUrl = 'api/users/1';
+  private usersUrl = 'api/users';
   private userAccountsUrl = 'api/userAccounts';
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  user$ = this.http.get<IUser>(this.usersUrl).pipe(tap(console.log),shareReplay<IUser>(1));
-
-  userAccounts$ = this.user$.pipe(
-    mergeMap((user: IUser) => this.http.get<IUserAccount[]>(`${this.userAccountsUrl}?userId=${user.id}`).pipe(tap(console.log),shareReplay<IUserAccount[]>(1)))
-  );
+  user$ = this.http.get<IUser>(`${this.usersUrl}/1`).pipe(tap(console.log));
+  userAccounts$ = this.http.get<IUserAccount[]>(`${this.userAccountsUrl}?userId=${1}`).pipe(tap(console.log))
 
   userLoggedIn$ = combineLatest([
     this.user$,
@@ -28,4 +25,8 @@ export class UsersService {
     map(([user, userAccounts]) => ({ user, userAccounts })),
     shareReplay(1)
   )
+
+  putUser(user: IUser) {
+    return this.http.put<void>(`${this.usersUrl}/${user.id}`, user);
+  }
 }

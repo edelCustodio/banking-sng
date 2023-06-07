@@ -6,7 +6,9 @@ export class UserData {
     {
       id: 1,
       firstName: 'Edel',
-      lastName: 'Custodio'
+      lastName: 'Custodio',
+      email: 'my@mail.com',
+      address: 'my awesome address'
     }
   ]
 
