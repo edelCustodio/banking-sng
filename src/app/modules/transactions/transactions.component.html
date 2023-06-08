@@ -1,6 +1,14 @@
 
 
-<mat-card *ngFor="let transaction of transactions">
+<form class="search-form" [formGroup]="searchForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput formControlName="search" >
+  </mat-form-field>
+</form>
+
+
+<mat-card *ngFor="let transaction of filteredTransactions">
   <mat-card-header>
     <mat-card-title>{{ transaction.merchantName }}</mat-card-title>
     <mat-card-subtitle>{{ transaction.merchantType }}</mat-card-subtitle>
