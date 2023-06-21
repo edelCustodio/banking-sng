@@ -28,7 +28,7 @@ export class TransfersComponent implements OnInit {
     private transferService: TransferService,
     private userService: UsersService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.userService.userLoggedIn$.subscribe(({ user }) => this.userId = user.id)
