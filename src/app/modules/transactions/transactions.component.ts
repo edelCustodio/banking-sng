@@ -18,7 +18,7 @@ export class TransactionsComponent implements OnInit, OnDestroy {
   filteredTransactions!: ITransaction[];
   unsubscribe$: Subject<void> = new Subject<void>();
   searchForm = this.fb.group({
-    search: this.fb.control('', [Validators.required])
+    search: this.fb.control('')
   });
 
   get searchControl() {
