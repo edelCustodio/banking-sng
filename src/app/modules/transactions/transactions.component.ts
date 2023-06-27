@@ -47,8 +47,8 @@ export class TransactionsComponent implements OnInit, OnDestroy {
     ]).pipe(
       takeUntil(this.unsubscribe$)
     )
-    .subscribe(
-      ([transactions, merchants, account, userloggedIn]) => {
+    .subscribe({
+      next: ([transactions, merchants, account, userloggedIn]) => {
         this.transactions = transactions.map(
           (transaction: ITransaction) => ({
             ...transaction,
@@ -60,8 +60,14 @@ export class TransactionsComponent implements OnInit, OnDestroy {
         ).sort((a, b) => (Date.parse((new Date(b.date).toString())) - Date.parse((new Date(a.date)).toString())));
         this.filteredTransactions = [...this.transactions];
         console.log(this.transactions);
-      }
-    );
+      },
+      error(err) {
+        console.error('Transactions error', err);
+      },
+      complete() {
+        console.log('Transactions complete');
+      },
+    });
 
     this.searchControl.valueChanges.pipe(
       takeUntil(this.unsubscribe$),
